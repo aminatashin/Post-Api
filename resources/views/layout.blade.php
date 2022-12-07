@@ -85,5 +85,6 @@ class="fixed bottom-0 left-0 w-full flex items-center justify-start font-bold bg
     >Post Job</a
 >
 </footer>
+<flash-message/>
 </body>
 </html>

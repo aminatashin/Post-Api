@@ -8,7 +8,11 @@
 <form method="POST" action="/products" enctype="multipart/form-data" >
     @csrf
    
-
+    @if(session('success'))
+    <div class="alert alert-success" >
+        {{session('success')}}
+    </div>
+    @endif
     <div class="mb-6">
         <label for="title" class="inline-block text-lg mb-2"
             > Title</label
@@ -25,13 +29,6 @@
         @enderror
     </div>
 
-  
-
-
-
-    
-
- 
 
     <div class="mb-6">
         <label for="logo" class="inline-block text-lg mb-2">
@@ -58,6 +55,7 @@
         </button>
 
         <a href="/" class="text-black ml-4"> Back </a>
+
     </div>
 </form>
 </div>
