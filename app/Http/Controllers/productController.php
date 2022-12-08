@@ -26,15 +26,16 @@ class productController extends Controller
   if ($request->hasFile('logo')){
     $form['logo']=$request->file('logo')->store('logs','public');
   }
- $form['logo']=$request->file('logo')->getClientOriginalName();
+ $name=$form['logo']=$request->file('logo')->getClientOriginalName();
 //  $form['logo']=$request->file('logo')->getClientOriginalExtension();
 //  $form['logo']=$request->file('logo')->getSize();
 //  $form['logo']=$request->file('logo')->getPath();
+$path=$form['logo']=$request->file('logo')->storeAs('logs',$name);
  
  product::create($form);
 
- 
- return redirect('/')->with('success','file uploaded');
+ return $path;
+//  return redirect('/')->with('success','file uploaded');
 
     }
 }
