@@ -57,6 +57,10 @@
         <a href="/" class="text-black ml-4"> Back </a>
 
     </div>
+    
+@foreach($products as $listing)
+<x-list :listing="$listing"  />
+@endforeach
 </form>
 </div>
 @endsection
